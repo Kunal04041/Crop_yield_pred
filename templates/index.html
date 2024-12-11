@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .crop-list {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 10px;
+            background: #eef;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Crop Yield Prediction</h2>
+
+<!-- Crop List -->
+<div class="crop-list">
+    <h3>Crop List</h3>
+    <ul>
+        <li>0: Cassava</li>
+        <li>1: Maize</li>
+        <li>2: Plantains and others</li>
+        <li>3: Potatoes</li>
+        <li>4: Rice (paddy)</li>
+        <li>5: Sorghum</li>
+        <li>6: Soybeans</li>
+        <li>7: Sweet potatoes</li>
+        <li>8: Wheat</li>
+        <li>9: Yams</li>
+    </ul>
+</div>
+
+<!-- Form -->
+<form action="/predict" method="POST">
+    <label for="rainfall">Average Rainfall (mm):</label>
+    <input type="number" id="rainfall" name="rainfall" step="0.01" placeholder="Enter average rainfall" required>
+    
+    <label for="temperature">Average Temperature (°C):</label>
+    <input type="number" id="temperature" name="temperature" step="0.01" placeholder="Enter average temperature" required>
+    
+    <label for="pesticides">Pesticide Use (tonnes):</label>
+    <input type="number" id="pesticides" name="pesticides" step="0.01" placeholder="Enter pesticide use" required>
+    
+    <label for="crop">Select Crop (Enter corresponding number):</label>
+    <input type="number" id="crop" name="crop" placeholder="Enter crop number (e.g., 0 for Cassava)" required>
+    
+    <button type="submit">Predict</button>
+</form>
+
+</body>
+</html>
